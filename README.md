@@ -21,7 +21,7 @@ quietly sneaks in 2–3 defects chosen from:
 | Branch              | Features that work                                                                                                         | Intentionally present issues (should be found by reviewer)                                                                                        |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **main**            | • Add article (title + content) <br> • List all articles <br> • Rate article via REST (UI not wired yet)                   | none – clean baseline                                                                                                                             |
-| **feature/tagging** | • Add tags when creating an article <br> • `/api/tags` endpoint returns tag cloud <br> • UI shows tag chips & filters list | Static/Style (2), Single-file (1), Cross-file (1), Security (1), Performance (1), Tests/coverage (1) – see below for details on errors |
+| **feat/tags** | • Add tags when creating an article <br> • `/api/tags` endpoint returns tag cloud <br> • UI shows tag chips & filters list | Static/Style (2), Single-file (1), Cross-file (1), Security (1), Performance (1), Tests/coverage (1) – see below for details on errors |
 
 More feature branches (search, live-ratings, markdown import/export) will
 follow the same pattern.
