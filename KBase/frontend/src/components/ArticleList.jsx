@@ -7,6 +7,19 @@ export default function ArticleList({ items }) {
       {items.map((a) => (
         <li key={a.id}>
           <strong>{a.title}</strong> — {a.content} (⭐{a.rating})
+
+          // Button for testing purposes
+          <button
+            onClick={() =>
+              fetch(`http://localhost:4000/api/articles/${a.id}/rate`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ delta: 1 }),
+              })
+            }
+          >
+            ⭐+
+          </button>
         </li>
       ))}
     </ul>

@@ -20,5 +20,11 @@ export default function useArticles() {
 
   useEffect(refresh, [refresh]);
 
-  return { items, add, refresh };
+  function updateRating(id, rating) {
+  setItems((prev) =>
+    prev.map((a) => (a.id === id ? { ...a, rating } : a))
+  );
+}
+
+  return { items, add, refresh, updateRating };
 }

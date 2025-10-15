@@ -15,6 +15,12 @@ router.post('/', (req, res) => {
 router.post('/:id/rate', (req, res) => {
   const article = svc.rate(req.params.id, req.body.delta ?? 1);
   if (!article) return res.sendStatus(404);
+
+  const io = req.app.get('io');
+  if (io) {
+    io.emit('rating-update', { id: article.id, rating: article.rating });
+  }
+
   res.json(article);
 });
 
