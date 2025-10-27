@@ -1,4 +1,3 @@
-```markdown
 # KBase – Mini Knowledge-Base Demo Repo  
 
 This repository is purposely small so a code-review bot can be exercised
@@ -12,7 +11,7 @@ from the seven buckets below:
 3. Cross-file interface bug  
 4. Dependency / version issue  
 5. Tests / coverage gap  
-6. Security smell  
+6. Security 
 7. Performance / maintainability issue  
 
 ---
@@ -57,7 +56,7 @@ GitHub Actions (`.github/workflows/ci.yml`) runs on every push / PR
 | Cross-file    | `frontend/src/components/TagCloud.jsx:14` | expects `tagName`, backend sends `name` |
 | Security      | `backend/src/routes/articles.js:16` | unsanitised `tags` from request body |
 | Performance   | `frontend/src/hooks/useArticles.js:44` | RegExp rebuilt every render |
-| Tests         | *(none)* – no tests for tagging |
+| Tests         | *(none)* – no tests for tagging features|
 
 ---
 
@@ -100,4 +99,3 @@ GitHub Actions (`.github/workflows/ci.yml`) runs on every push / PR
 
 ## License
 MIT
-```
