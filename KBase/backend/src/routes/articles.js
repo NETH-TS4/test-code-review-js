@@ -6,9 +6,9 @@ const router = Router();
 router.get('/', (_req, res) => res.json(svc.list()));
 
 router.post('/', (req, res) => {
-  const { title, content } = req.body;
+  const { title, content, tags = [] } = req.body;
   if (!title || !content) return res.status(400).send('Missing fields');
-  const created = svc.create({ title, content });
+  const created = svc.create({ title, content, tags });
   res.status(201).json(created);
 });
 

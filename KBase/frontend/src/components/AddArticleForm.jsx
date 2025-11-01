@@ -4,13 +4,16 @@ import { useState } from 'react';
 export default function AddArticleForm({ onAdd }) {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [tags, setTags] = useState('');
 
   function submit(e) {
     e.preventDefault();
     if (!title || !content) return;
-    onAdd(title, content).then(() => {
+    const tagArr = tags.split(',').map((s) => s.trim());
+    onAdd(title, content, tagArr).then(() => {
       setTitle('');
       setContent('');
+      setTags('');
     });
   }
 
@@ -25,6 +28,11 @@ export default function AddArticleForm({ onAdd }) {
         placeholder="content"
         value={content}
         onChange={(e) => setContent(e.target.value)}
+      />
+      <input
+        placeholder="tags (a,b,c)"
+        value={tags}
+        onChange={(e) => setTags(e.target.value)}
       />
       <button>Add</button>
     </form>
